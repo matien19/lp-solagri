@@ -13,5 +13,6 @@ class Jasa extends Model
         'desk',
         'list_layanan',
         'img',
+        'kategori'
     ];
 }

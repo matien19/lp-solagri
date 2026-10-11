@@ -22,8 +22,9 @@ class JasaController extends Controller
             'desk' => 'required|string',
             'list_layanan' => 'required|string',
             'img' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'kategori' => 'required|string|max:255',
         ]);
-        $data = $request->only(['nama', 'desk', 'list_layanan']);
+        $data = $request->only(['nama', 'desk', 'list_layanan', 'kategori']);
 
         if ($request->hasFile('img')) {
             $file = $request->file('img');
@@ -49,11 +50,12 @@ class JasaController extends Controller
             'nama' => 'required|string|max:255',
             'desk' => 'required|string',
             'list_layanan' => 'required|string',
+            'kategori' => 'required|string|max:255',
             'img' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
         ]);
 
         $jasa = Jasa::findOrFail($id);
-        $data = $request->only(['nama', 'desk', 'list_layanan']);
+        $data = $request->only(['nama', 'desk', 'list_layanan', 'kategori']);
 
         if ($request->hasFile('img')) {
             if ($jasa->img && file_exists(public_path($jasa->img))) {

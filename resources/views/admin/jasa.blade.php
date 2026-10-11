@@ -5,7 +5,7 @@
         <h2 class="mb-0">Data Jasa</h2>
     </div>
 </div>
-<div id="jasas" data-list='{"valueNames":["nama","desk","list_layanan"],"page":10,"pagination":true}'>
+<div id="jasas" data-list='{"valueNames":["nama","desk","kategori","list_layanan"],"page":10,"pagination":true}'>
     <div class="mb-4">
         <div class="row g-3">
             <div class="col-auto">
@@ -37,6 +37,8 @@
                             data-sort="nama">NAMA JASA</th>
                         <th class="sort align-middle ps-4" scope="col" data-sort="desk" style="width:300px;">
                             DESKRIPSI</th>
+                        <th class="sort align-middle ps-4" scope="col" data-sort="kategori" style="width:200px;">
+                            KATEGORI</th>
                         <th class="sort align-middle ps-4" scope="col" data-sort="list_layanan" style="width:250px;">
                             DAFTAR LAYANAN</th>
                         <th class="sort align-middle text-end ps-3" scope="col" style="width:100px;">AKSI</th>
@@ -69,7 +71,11 @@
                                 {{ \Illuminate\Support\Str::limit($item->desk, 80) }}
                             </p>
                         </td>
-
+                        <td>
+                            <span class="badge bg-{{ $item->kategori === 'bundling' ? 'primary' : 'secondary' }}">
+                                {{ ucfirst($item->kategori) }}
+                            </span>
+                        </td>
                         <!-- Daftar Layanan -->
                         <td class="list_layanan align-middle ps-4 text-body-secondary">
                             <ol class="mb-0 ps-3">
@@ -150,6 +156,14 @@
                             <label class="form-label" for="inputListLayanan">Daftar Layanan</label>
                             <input class="form-control" type="text" name="list_layanan" id="inputListLayanan" required>
                             <small class="text-muted" style="display: block; margin-top: -0.5rem;">Ketik nama layanan lalu tekan <b>Enter</b> untuk menambahkan.</small>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Kategori</label>
+                            <select class="form-select" name="kategori" id="inputKategori" required>
+                                <option value="" disabled selected>Pilih Kategori</option>
+                                <option value="bundling">Bundling</option>
+                                <option value="reguler">Reguler</option>
+                            </select>
                         </div>
 
                         <div class="col-12">
