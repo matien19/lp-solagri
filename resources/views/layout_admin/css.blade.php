@@ -1,9 +1,9 @@
-<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/icons/apple-touch-icon.png') }}">
-<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/img/icons/favicon-32x32.png') }}">
-<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/img/icons/favicon-16x16.png') }}">
-<link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/icons/favicon.png') }}">
-<link rel="manifest" href="{{ asset('assets/img/icons/manifest.json') }}">
-<meta name="msapplication-TileImage" content="{{ asset('assets/img/icons/mstile-150x150.png') }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('template/icons/icon-180x180.png') }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('template/icons/icon-32x32.png') }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('template/icons/icon-16x16.png') }}">
+<link rel="shortcut icon" type="image/x-icon" href="{{ asset('template/icons/favicon.ico') }}">
+<link rel="manifest" href="{{ asset('template/manifest.json') }}">
+<meta name="msapplication-TileImage" content="{{ asset('template/icons/icon-152x152.png') }}">
 <meta name="theme-color" content="#ffffff">
 <script src="{{ asset('template/vendors/simplebar/simplebar.min.js') }}"></script>
 <script src="{{ asset('template/assets/js/config.js') }}"></script>

@@ -113,73 +113,7 @@
 @endsection
 @push('js')
 <script>
-    const products = [
-      {
-        "id": 1,
-        "nama": "Bibit Kelapa Sawit",
-        "perusahaan": "CV Solusi Agribisnis",
-        "varietas": "DxP PPKS 540",
-        "stok": 2500,
-        "harga": 45000,
-        "lokasi": "Medan, Sumatera Utara",
-        "minimal_order": 100,
-        "img": "./assets/img/bibit/bibit.jpg",
-        "created_at": "2026-08-11T07:58:13.000000Z",
-        "updated_at": "2026-08-13T06:30:49.000000Z"
-      },
-      {
-        "id": 3,
-        "nama": "aaabbb11122",
-        "perusahaan": "111222",
-        "varietas": "111122",
-        "stok": 111122,
-        "harga": 1111122,
-        "lokasi": "lokasii111222",
-        "minimal_order": 111122,
-        "img": "",
-        "created_at": "2026-08-12T10:11:20.000000Z",
-        "updated_at": "2026-08-16T06:30:13.000000Z"
-      },
-      {
-        "id": 4,
-        "nama": "aaa",
-        "perusahaan": "asd",
-        "varietas": "asd dsadas sadsadsa sadsadsa asdsadsa asdsadsa sadsadsa",
-        "stok": 223,
-        "harga": 22232,
-        "lokasi": "asdds",
-        "minimal_order": 2134,
-        "img": "",
-        "created_at": "2026-08-16T06:29:55.000000Z",
-        "updated_at": "2026-08-16T06:29:55.000000Z"
-      },
-      {
-        "id": 6,
-        "nama": "aaabbb11122332",
-        "perusahaan": "1112223",
-        "varietas": "1111223",
-        "stok": 1111223,
-        "harga": 11111223,
-        "lokasi": "wq",
-        "minimal_order": 1111223,
-        "img": "",
-        "created_at": "2026-08-16T06:36:16.000000Z",
-        "updated_at": "2026-08-16T06:36:16.000000Z"
-      },
-      {
-        "id": 7,
-        "nama": "aaabbb11122332",
-        "perusahaan": "1112223",
-        "varietas": "1111223",
-        "stok": 1111223,
-        "harga": 11111223,
-        "lokasi": "wq",
-        "minimal_order": 1111223,
-        "img": "",
-        "created_at": "2026-08-16T06:36:16.000000Z",
-        "updated_at": "2026-08-16T06:36:16.000000Z"
-      }
-    ];
+    const products =  @json($data);
 
     let displayedCount = 4;
     const grid = document.getElementById('productGrid');

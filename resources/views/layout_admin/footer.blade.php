@@ -2,8 +2,8 @@
     <div class="row g-0 justify-content-between align-items-center h-100">
         <div class="col-12 col-sm-auto text-center">
             <p class="mb-0 mt-2 mt-sm-0 text-body"><span
-                    class="d-none d-sm-inline-block"> Sarana Hijau</span><span class="d-none d-sm-inline-block mx-1">|</span><br
-                    class="d-sm-none" />{{ date('Y') }} &copy;<a class="mx-1" href="#">Sarana Hijau</a></p>
+                    class="d-none d-sm-inline-block"> Solagri</span><span class="d-none d-sm-inline-block mx-1">|</span><br
+                    class="d-sm-none" />{{ date('Y') }} &copy;<a class="mx-1" href="#">Solagri</a></p>
         </div>
         <div class="col-12 col-sm-auto text-center">
             <p class="mb-0 text-body-tertiary text-opacity-85">v1.0.0</p>

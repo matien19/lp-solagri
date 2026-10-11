@@ -4,7 +4,7 @@
 @section('content')
 <!-- Page Title -->
 <div class="page-title dark-background" data-aos="fade"
-    style="background-image: url(https://images.unsplash.com/photo-1620200423727-8127f75d7f53?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+    style="background-image: url({{ asset('assets/img/bgg.png') }});">
     <div class="container position-relative">
         <h1>Dokumen Perusahaan</h1>
         <nav class="breadcrumbs">
@@ -35,26 +35,26 @@
     const dataDokumen = [
       {
         title: "SK Kemenkumham",
-        image: "./assets/img/dokumen/sk.png",
-        link: "./assets/img/dokumen/sk.png",
+        image: "{{ asset('assets/img/dokumen/sk.png') }}",
+        link: "{{ asset('assets/img/dokumen/sk.png') }}",
         delay: 100
       },
       {
         title: "Akta Notaris",
-        image: "./assets/img/dokumen/notaris.png",
-        link: "./assets/img/dokumen/notaris.png",
+        image: "{{ asset('assets/img/dokumen/notaris.png') }}",
+        link: "{{ asset('assets/img/dokumen/notaris.png') }}",
         delay: 200
       },
       {
         title: "NIB Perusahaan",
-        image: "./assets/img/dokumen/sertifikat_standar.png",
-        link: "./assets/img/dokumen/sertifikat_standar.png",
+        image: "{{ asset('assets/img/dokumen/sertifikat_standar.png') }}",
+        link: "{{ asset('assets/img/dokumen/sertifikat_standar.png') }}",
         delay: 300
       },
       {
         title: "NPWP",
-        image: "./assets/img/dokumen/npwp.png",
-        link: "./assets/img/dokumen/npwp.png",
+        image: "{{ asset('assets/img/dokumen/npwp.png') }}",
+        link: "{{ asset('assets/img/dokumen/npwp.png') }}",
         delay: 400
       }
     ];

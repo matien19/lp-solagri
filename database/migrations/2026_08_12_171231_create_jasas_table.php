@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('desk');
             $table->string('img')->nullable();
             $table->text('list_layanan')->nullable();
+            $table->enum('kategori', ['reguler', 'bundling'])->default('reguler');
             $table->timestamps();
         });
     }

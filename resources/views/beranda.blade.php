@@ -1101,90 +1101,50 @@
     <div class="container">
 
         <div class="row gy-5">
-
-            <div class="col-xl-4 col-md-6">
-                <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="100">
-
-                    <div class="post-img position-relative overflow-hidden">
-                        <img src="assets/img/blog/berita1.png" class="img-fluid" alt="">
-                        <span class="post-date">December 12</span>
-                    </div>
-
-                    <div class="post-content d-flex flex-column" style="flex-grow: 1;">
-                        <h3 class="post-title">KERJASAMA STRATEGIS DENGAN GAPERKASINDO </h3>
-
-                        <div class="meta d-flex align-items-center mb-auto"> <span class="px-3 text-black-50"></span>
-                            <div class="d-flex align-items-center">
-                                <i class="bi bi-folder2"></i> <span class="ps-2">Kerja sama</span>
-                            </div>
-                        </div>
-
-                        <hr>
-
-                        <a href="blog-details.html" class="readmore stretched-link mt-auto"><span>Read More</span><i
-                                class="bi bi-arrow-right"></i></a>
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6">
-                <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="200">
-
-                    <div class="post-img position-relative overflow-hidden">
-                        <img src="assets/img/blog/2.png" class="img-fluid" alt="">
-                        <span class="post-date">July 17</span>
-                    </div>
-
-                    <div class="post-content d-flex flex-column">
-                        <h3 class="post-title">KUNJUNGAN KE PRODUSEN KELAPA DALAM
-                            DI PANGANDARAN JAWA BARAT TERKAIT PERBENIHAN</h3>
-
-                        <div class="meta d-flex align-items-center">
-                            <div class="d-flex align-items-center">
-                            </div>
-                            <span class="px-3 text-black-50"></span>
-                            <div class="d-flex align-items-center">
-                                <i class="bi bi-folder2"></i> <span class="ps-2">Kunjungan</span>
-                            </div>
-                        </div>
-                        <hr>
-
-                        <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i
-                                class="bi bi-arrow-right"></i></a>
-
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            @forelse($berita_terbaru as $item)
+            <!-- Delay animasi ditambahkan secara dinamis: 100, 200, 300, dst -->
+            <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="{{ $loop->iteration * 100 }}">
                 <div class="post-item position-relative h-100">
 
                     <div class="post-img position-relative overflow-hidden">
-                        <img src="assets/img/blog/5.png" class="img-fluid" alt="">
-                        <span class="post-date">September 05</span>
+                        <!-- Gambar Dinamis dengan Fallback Default -->
+                        <img src="{{ $item->img ? asset($item->img) : asset('assets/img/default-berita.jpg') }}"
+                            class="img-fluid w-100" alt="{{ $item->judul }}" style="height: 250px; object-fit: cover;">
+
+                        <!-- Tanggal Dinamis -->
+                        <span class="post-date">{{ $item->created_at->format('F d') }}</span>
                     </div>
 
-                    <div class="post-content d-flex flex-column">
+                    <div class="post-content d-flex flex-column" style="flex-grow: 1;">
+                        <!-- Judul Dinamis -->
+                        <h3 class="post-title">{{ $item->judul }}</h3>
 
-                        <h3 class="post-title">KUNJUNGAN KE PEMBIBITAN PALA DI LAMPUNG DENGAN
-                            PENANGKAR PAK EDI SAPWANTO DARI PERWAKILAN
-                            PERUSAHAAN SNV INDONESIA BOGOR</h3>
-
-                        <div class="meta d-flex align-items-center">
-                            <div class="d-flex align-items-center">
-                            </div>
+                        <div class="meta d-flex align-items-center mb-auto">
                             <span class="px-3 text-black-50"></span>
                             <div class="d-flex align-items-center">
-                                <i class="bi bi-folder2"></i> <span class="ps-2">Kunjungan</span>
+                                <i class="bi bi-folder2"></i> <span class="ps-2">Berita & Kegiatan</span>
                             </div>
                         </div>
-                        <hr>
-                        <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i
-                                class="bi bi-arrow-right"></i></a>
 
+                        <hr>
+
+                        <!-- Link menuju detail berita berdasarkan slug -->
+                        <a href="{{ route('berita.detail', $item->slug) }}" class="readmore stretched-link mt-auto">
+                            <span>Read More</span><i class="bi bi-arrow-right"></i>
+                        </a>
                     </div>
+
                 </div>
+            </div><!-- End post item -->
+            @empty
+
+            <!-- Tampilan jika belum ada berita di database -->
+            <div class="col-12 text-center" data-aos="fade-up" data-aos-delay="100">
+                <p class="text-muted">Belum ada kegiatan atau berita terbaru yang dipublikasikan.</p>
             </div>
+
+            @endforelse
+
         </div>
     </div>
 </section>
