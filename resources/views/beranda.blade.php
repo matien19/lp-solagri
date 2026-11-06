@@ -808,7 +808,7 @@
                     </h1>
                     <!-- Deskripsi -->
                     <p class="hero-description">
-                        CV. Solusi Agribisnis dapat menjadi mitra strategis Anda
+                        Solusi Agribisnis dapat menjadi mitra strategis Anda
                         untuk pengembangan usaha yang profesional, terencana,
                         dan berkelanjutan.
                     </p>
@@ -839,16 +839,16 @@
             </div>
 
             <div class="col-lg-5 order-lg-1" data-aos="fade-up" data-aos-delay="100">
-                <h2 class="content-title mb-4">CV Solusi Agribisnis</h2>
+                <h2 class="content-title mb-4"> Solusi Agribisnis</h2>
 
                 <p class="mb-3" style="font-size: 1.05rem; line-height: 1.7;">
-                    <strong>CV. Solusi Agribisnis</strong> hadir mengedepankan <span
+                    <strong> Solusi Agribisnis</strong> hadir mengedepankan <span
                         class="text-success fw-bold">digitalisasi
                         dan modernisasi</span> sektor agribisnis Indonesia demi hasil yang lebih optimal.
                 </p>
 
                 <p class="mb-3" style="font-size: 1rem; color: #555;">
-                    Berada di bawah naungan <strong>CV. Terang Bulan Sejahtera</strong>, kami berdedikasi
+                    Berada di bawah naungan <strong> Terang Bulan Sejahtera</strong>, kami berdedikasi
                     menjembatani
                     kesenjangan antara praktik pertanian tradisional dan adopsi teknologi mutakhir masa kini.
                 </p>
@@ -886,7 +886,7 @@
             <div class="modal-body p-0">
                 <div class="ratio ratio-16x9">
                     <iframe src="https://www.youtube.com/embed/IKK3CAjpBg4"
-                        title="Company Profile CV. Solusi Agribisnis (SOLAGRI)"
+                        title="Company Profile Solusi Agribisnis (SOLAGRI)"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe>
                 </div>

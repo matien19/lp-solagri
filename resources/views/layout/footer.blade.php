@@ -5,11 +5,10 @@
 
                 <div class="col-lg-4 col-md-6 footer-about">
                     <a href="index.html" class="logo d-flex align-items-center">
-                        <span class="sitename">C.V Solagri</span>
+                        <span class="sitename"> Solagri</span>
                     </a>
-                    <div class="footer-contact pt-3">
-                        <p>Jl. Jakarta No. 123 Ragunan</p>
-                        <p>Jakarta Selatan, 535022</p>
+                    <div class="footer-contact pt-1">
+                        <p>Dewata Office, Sovereign Plaza, Jl. TB Simatupang No.36 12th Floor, RT.1/RW.2, West Cilandak, Cilandak, South Jakarta City, Jakarta 12430</p>
                         <p class=""><strong>Admin 1 :</strong> <span> +62 812-3190-0339</span></p>
                         <p class=""><strong>Admin 2 :</strong> <span> +62 822-2787-0087</span></p>
                         <p><strong>Email:</strong> <span>asolusiagribisnis@gmail.com</span></p>
