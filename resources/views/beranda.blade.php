@@ -864,7 +864,7 @@
                 </div>
 
                 <p>
-                    <a href="https://wa.me/6281231900339?text=Halo%2C%20selamat%20siang.%20Saya%20tertarik%20untuk%20membeli%20bibit.%20Apakah%20bibitnya%20masih%20tersedia,%20Terima%20kasih."
+                    <a href="https://wa.me/628197958894?text=Halo%2C%20selamat%20siang.%20Saya%20tertarik%20dengan%20jasa%20dari%20Solagri%20.%20Terima%20kasih."
                         target="_blank" class="btn btn-success btn-cta shadow-sm px-4 py-2"
                         style="border-radius: 50px;">
                         <i class="bi bi-whatsapp me-2"></i> Hubungi Kami
