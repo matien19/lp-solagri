@@ -236,7 +236,7 @@
         <div class="row mt-3">
             <p class="text-dark">Untuk informasi lebih lanjut dapat klik tombol di bawah ini:</p>
             <div class="col-12">
-                <a href="https://wa.me/6281231900339" target="_blank" class="btn btn-success"><i class="bi bi-whatsapp"></i> Hubungi via WhatsApp</a>
+                <a href="https://wa.me/628197958894" target="_blank" class="btn btn-success"><i class="bi bi-whatsapp"></i> Hubungi via WhatsApp</a>
             </div>
         </div>
         `.trim();
