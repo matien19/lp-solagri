@@ -1095,8 +1095,8 @@
 <section id="recent-posts" class="recent-posts section">
 
     <div class="container section-title" data-aos="fade-up">
-        <h2>Kegiatan / Berita</h2>
-        <h6>Kegiatan Terbaru kami</h6>
+        <h2>informasi / kegiatan</h2>
+        <h6>informasi / kegiatan Terbaru kami</h6>
     </div>
     <div class="container">
 
