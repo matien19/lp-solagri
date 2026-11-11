@@ -1,7 +1,8 @@
 <header id="header" class="header d-flex align-items-center position-relative">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
         <a href="{{ route('login') }}" class="logo d-flex align-items-center">
-            <img src="{{ asset('assets/img/logo.png') }}" alt="sarana-hijau" style="max-height: 160px; max-width: 160px;">
+            <img src="{{ asset('assets/img/logo.png') }}" alt="sarana-hijau"
+                style="max-height: 160px; max-width: 160px;">
         </a>
 
         <nav id="navmenu" class="navmenu">
@@ -25,7 +26,8 @@
                         <li><a href="{{ route('jasa') }}">Jasa</a></li>
                     </ul>
                 </li>
-                <li><a href="{{ route('berita') }}" class="{{ Request::is('berita*') ? 'active' : '' }}">Berita</a></li>
+                <li><a href="{{ route('berita') }}" class="{{ Request::is('berita*') ? 'active' : '' }}">informasi /
+                        kegiatan</a></li>
                 <li><a href="{{ route('kontak') }}" class="{{ Request::is('kontak') ? 'active' : '' }}">Kontak kami</a>
                 </li>
             </ul>

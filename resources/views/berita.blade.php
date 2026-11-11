@@ -55,11 +55,11 @@
 <div class="page-title dark-background" data-aos="fade"
     style="background-image: url({{ asset('assets/img/bgg.png') }});">
     <div class="container position-relative">
-        <h1>Berita / Kegiatan</h1>
+        <h1>informasi / kegiatan</h1>
         <nav class="breadcrumbs">
             <ol>
                 <li><a href="{{ route('beranda') }}">Home</a></li>
-                <li class="current">Berita / Kegiatan</li>
+                <li class="current">informasi / kegiatan</li>
             </ol>
         </nav>
     </div>
@@ -67,7 +67,7 @@
 
 <section id="recent-posts" class="recent-posts section">
     <div class="container section-title" data-aos="fade-up">
-        <h2>Kegiatan / Berita</h2>
+        <h2>informasi / kegiatan</h2>
     </div>
 
     <div class="container">
