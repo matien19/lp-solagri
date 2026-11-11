@@ -25,10 +25,11 @@ class BeritaController extends Controller
         $request->validate([
             'judul' => 'required|string|max:255',
             'deskripsi' => 'required|string',
+            'kategori' => 'required|in:informasi,kegiatan',
             'img' => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
         ]);
 
-        $data = $request->only(['judul', 'deskripsi']);
+        $data = $request->only(['judul', 'deskripsi', 'kategori']);
 
         $slug = Str::slug($request->judul);
         $original_slug = $slug;
@@ -69,12 +70,13 @@ class BeritaController extends Controller
         $request->validate([
             'judul' => 'required|string|max:255',
             'deskripsi' => 'required|string',
+            'kategori' => 'required|in:informasi,kegiatan',
             'img' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
         ]);
 
         $berita = Berita::findOrFail($id);
 
-        $data = $request->only(['judul', 'deskripsi']);
+        $data = $request->only(['judul', 'deskripsi', 'kategori']);
 
         // Update slug jika judul diubah
         $slug = Str::slug($request->judul);

@@ -1,4 +1,12 @@
 @extends('layout.main')
+@push('css')
+<style>
+    .blog-details .article .content,
+    .blog-details .article .content * {
+        text-align: justify !important;
+    }
+</style>
+@endpush
 @section('content')
 <!-- Page Title -->
 <div class="page-title dark-background" data-aos="fade"

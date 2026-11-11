@@ -39,8 +39,19 @@ class PageController extends Controller
 
     public function berita()
     {
-        $data = Berita::orderBy('created_at', 'desc')->paginate(6);
-        return view('berita', compact('data'));
+        $informasi = Berita::where('kategori', 'informasi')
+            ->orderByDesc('created_at')
+            ->paginate(6, ['*'], 'informasi_page')
+            ->appends(['tab' => 'informasi']);
+        $kegiatan = Berita::where('kategori', 'kegiatan')
+            ->orderByDesc('created_at')
+            ->paginate(6, ['*'], 'kegiatan_page')
+            ->appends(['tab' => 'kegiatan']);
+        $activeTab = in_array(request('tab'), ['informasi', 'kegiatan'], true)
+            ? request('tab')
+            : 'informasi';
+
+        return view('berita', compact('informasi', 'kegiatan', 'activeTab'));
     }
 
     public function beritaDetail(String $slug)

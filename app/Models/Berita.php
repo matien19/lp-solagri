@@ -12,6 +12,7 @@ class Berita extends Model
         'judul',
         'slug',
         'img',
-        'deskripsi'
+        'deskripsi',
+        'kategori'
     ];
 }

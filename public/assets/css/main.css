@@ -1634,10 +1634,11 @@ section,
 .blog-details .content blockquote {
   overflow: hidden;
   background-color: color-mix(in srgb, var(--default-color), transparent 95%);
-  padding: 60px;
+  padding: 16px 24px;
   position: relative;
-  text-align: center;
-  margin: 20px 0;
+  text-align: justify;
+  font-size: 0.9rem;
+  margin: 12px 0;
 }
 
 .blog-details .content blockquote p {
@@ -1646,7 +1647,7 @@ section,
   margin-bottom: 0;
   font-style: italic;
   font-weight: 500;
-  font-size: 22px;
+  font-size: 0.9rem;
 }
 
 .blog-details .content blockquote:after {

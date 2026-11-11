@@ -28,6 +28,20 @@ $actionUrl = $isEdit ? route('admin.berita.update', $berita->id) : route('admin.
                         value="{{ old('judul', $berita->judul ?? '') }}" required>
                 </div>
 
+                <div class="col-12">
+                    <label class="form-label">Kategori</label>
+                    <select class="form-select" name="kategori" required>
+                        <option value="informasi"
+                            {{ old('kategori', $berita->kategori ?? 'informasi') === 'informasi' ? 'selected' : '' }}>
+                            Informasi
+                        </option>
+                        <option value="kegiatan"
+                            {{ old('kategori', $berita->kategori ?? 'informasi') === 'kegiatan' ? 'selected' : '' }}>
+                            Kegiatan
+                        </option>
+                    </select>
+                </div>
+
                 <!-- Field Gambar -->
                 <div class="col-12">
                     <label class="form-label">Gambar

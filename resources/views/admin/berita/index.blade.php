@@ -36,6 +36,7 @@
                         <th class="sort white-space-nowrap align-middle fs-10" scope="col" style="width:70px;"></th>
                         <th class="sort white-space-nowrap align-middle ps-4" scope="col" style="width:250px;"
                             data-sort="judul">JUDUL</th>
+                        <th class="align-middle ps-4" scope="col" style="width:140px;">KATEGORI</th>
                         <th class="sort align-middle ps-4" scope="col" data-sort="deskripsi" style="width:400px;">
                             DESKRIPSI</th>
                         <th class="sort align-middle text-end ps-3" scope="col" style="width:100px;">AKSI</th>
@@ -59,6 +60,10 @@
                             <p class="fw-bold line-clamp-2 mb-0 text-body-emphasis">
                                 {{ $item->judul }}
                             </p>
+                        </td>
+
+                        <td class="align-middle ps-4">
+                            {{ ucfirst($item->kategori) }}
                         </td>
 
                         <!-- Deskripsi Berita (Teks Singkat) -->

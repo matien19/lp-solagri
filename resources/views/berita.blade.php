@@ -45,8 +45,23 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
-
         line-height: 1.5;
+    }
+
+    .news-nav-tabs .nav-link {
+        color: var(--heading-color);
+        font-weight: 600;
+        border: 2px solid #e0e0e0;
+        border-radius: 50px;
+        padding: 10px 25px;
+        transition: all 0.3s ease;
+        background: #fff;
+    }
+
+    .news-nav-tabs .nav-link.active {
+        background-color: var(--accent-color);
+        color: #fff;
+        border-color: var(--accent-color);
     }
 </style>
 @endpush
@@ -67,66 +82,73 @@
 
 <section id="recent-posts" class="recent-posts section">
     <div class="container section-title" data-aos="fade-up">
-        <h2>informasi / kegiatan</h2>
+        <h2>Informasi / Kegiatan</h2>
     </div>
 
-    <div class="container">
-        <div class="row gy-5">
+    @php
+    $categories = [
+        'informasi' => ['label' => 'Informasi', 'data' => $informasi],
+        'kegiatan' => ['label' => 'Kegiatan', 'data' => $kegiatan],
+    ];
+    @endphp
 
-            <!-- Mulai Perulangan Data Berita -->
-            @forelse($data as $item)
-            <div class="col-xl-4 col-md-6">
-                <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="100">
+    <div class="container mb-4">
+        <ul class="nav nav-pills news-nav-tabs justify-content-center gap-3" id="newsCategoryTab" role="tablist">
+            @foreach($categories as $category => $tab)
+            <li class="nav-item" role="presentation">
+                <button class="nav-link {{ $activeTab === $category ? 'active' : '' }}" id="{{ $category }}-tab"
+                    data-bs-toggle="pill" data-bs-target="#{{ $category }}-pane" type="button" role="tab"
+                    aria-controls="{{ $category }}-pane" aria-selected="{{ $activeTab === $category ? 'true' : 'false' }}">
+                    {{ $tab['label'] }}
+                </button>
+            </li>
+            @endforeach
+        </ul>
+    </div>
 
-                    <div class="post-img position-relative overflow-hidden">
-                        <!-- Menampilkan Gambar (dengan fallback default jika kosong) -->
-                        <img src="{{ $item->img ? asset($item->img) : asset('assets/img/default-berita.jpg') }}"
-                            class="img-fluid" alt="{{ $item->judul }}"
-                            style="width: 100%; height: 250px; object-fit: cover;">
-
-                        <!-- Menampilkan Tanggal Format: 17 July -->
-                        <span class="post-date">{{ $item->created_at->format('F d') }}</span>
-                    </div>
-
-                    <div class="post-content d-flex flex-column" style="flex-grow: 1;">
-                        <!-- Menampilkan Judul -->
-                        <h3 class="post-title">{{ $item->judul }}</h3>
-
-                        <div class="meta d-flex align-items-center mb-auto">
-                            <span class="px-3 text-black-50"></span>
-                            <div class="d-flex align-items-center">
-                            </div>
+    <div class="container tab-content" id="newsCategoryTabContent">
+        @foreach($categories as $category => $tab)
+        <div class="tab-pane fade {{ $activeTab === $category ? 'show active' : '' }}" id="{{ $category }}-pane"
+            role="tabpanel" aria-labelledby="{{ $category }}-tab" tabindex="0">
+            <div class="row gy-5">
+                @forelse($tab['data'] as $item)
+                <div class="col-xl-4 col-md-6">
+                    <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="100">
+                        <div class="post-img position-relative overflow-hidden">
+                            <img src="{{ $item->img ? asset($item->img) : asset('assets/img/default-berita.jpg') }}"
+                                class="img-fluid" alt="{{ $item->judul }}"
+                                style="width: 100%; height: 250px; object-fit: cover;">
+                            <span class="post-date">{{ $item->created_at->format('F d') }}</span>
                         </div>
 
-                        <hr>
+                        <div class="post-content d-flex flex-column" style="flex-grow: 1;">
+                            <h3 class="post-title">{{ $item->judul }}</h3>
+                            <div class="meta d-flex align-items-center mb-auto">
+                                <span class="px-3 text-black-50"></span>
+                            </div>
+                            <hr>
 
-                        <!-- Link menuju detail berita berdasarkan slug -->
-                        <a href="{{ route('berita.detail', $item->slug) }}" class="readmore stretched-link mt-auto">
-                            <span>Read More</span><i class="bi bi-arrow-right"></i>
-                        </a>
+                            <a href="{{ route('berita.detail', $item->slug) }}"
+                                class="readmore stretched-link mt-auto">
+                                <span>Read More</span><i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
                     </div>
-
                 </div>
-            </div><!-- End post item -->
-
-            @empty
-            <!-- Tampilan jika belum ada berita di database -->
-            <div class="col-12 text-center">
-                <p>Belum ada berita atau kegiatan yang diterbitkan.</p>
+                @empty
+                <div class="col-12 text-center">
+                    <p>Belum ada {{ strtolower($tab['label']) }} yang diterbitkan.</p>
+                </div>
+                @endforelse
             </div>
-            @endforelse
-            <!-- Akhir Perulangan -->
 
+            <section class="blog-pagination section mt-5">
+                <div class="d-flex justify-content-center">
+                    {{ $tab['data']->appends(['tab' => $category])->links('pagination::bootstrap-5') }}
+                </div>
+            </section>
         </div>
-    </div>
-</section>
-
-<!-- Section Pagination -->
-<section id="blog-pagination" class="blog-pagination section">
-    <div class="container">
-        <div class="d-flex justify-content-center">
-            {{ $data->links('pagination::bootstrap-5') }}
-        </div>
+        @endforeach
     </div>
 </section>
 @endsection
